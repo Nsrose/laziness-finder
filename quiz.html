@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laziness Finder Quiz</title>
+	<link href="http://fonts.googleapis.com/css?family=Raleway:200,300,400" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="static/style.css">
+		<script src="static/jquery-1.9.1.js"></script>
+		<script src="static/script.js"></script>
+		<script type='text/javascript'>
+			function isRadioSelected(numberq) {
+				for (var i=1; i<5; i++) {
+					var radiobutton = document.getElementById('q' + numberq.toString() + '.' + i.toString());
+					if (radiobutton.checked) {
+						return true;
+					}
+				}
+			}	
+			function areAllSelected() { 
+				for (var i=1; i<11; i++) {
+					if (isRadioSelected(i)!==true) {
+						return false;
+					}
+				}
+			}
+			function finalSelected() {
+				if (areAllSelected()===false) {
+					alert("Please complete all fields before submitting.")
+					return false;
+				}  
+			} 
+		</script> 
+</head>
+<body>
+	<div id="quiz-title">Quiz</div>
+	<div id="quiz-subtitle">Find out how lazy you are. Or don't.</div>
+	<div id='main'>
+
+		<form action='/result' id='quiz' onsubmit="return finalSelected()"> 	
+			<div class='quiz'>	
+				<div class="q-num">Question 1</div>
+				<div class="q-title">Which of the following activites is your favorite?</div> 
+				<input type="radio" name="choice1" id='q1.1' value="a">Going rock climbing.<br>
+				<input type="radio" name="choice1" id='q1.2' value="b">Gardening<br>
+				<input type="radio" name="choice1" id='q1.3' value="c">Hanging out with friends<br>
+				<input type="radio" name="choice1" id='q1.4' value="d">Playing GTA V 
+			</div>
+			<div class='quiz'>
+				<div class="q-num">Question 2</div>
+				<div class="q-title">If you saw a baby drowning in a pool, what would you do FIRST?</div> 
+				<input type="radio" name="choice2" id='q2.1' value="a">Jump in immediately to save it.<br>
+				<input type="radio" name="choice2" id='q2.2' value="b">Make sure no one else is already diving in before saving it.<br>
+				<input type="radio" name="choice2" id='q2.3' value="c">Call 911<br>
+				<input type="radio" name="choice2" id='q2.4' value="d">Slowly put down your sweaty cheesburger and wipe the ketchup from your fingers before applying sun lotion to make sure you don't get burnt whilst saving the poor kid
+			</div>	
+			<div class='quiz'>
+				<div class="q-num">Question 3</div>
+				<div class="q-title">What is the remainder of 47/2?</div> 
+				<input type="radio" name="choice3" id='q3.1' value="a">1<br>
+				<input type="radio" name="choice3" id='q3.2' value="b">47<br>
+				<input type="radio" name="choice3" id='q3.3' value="c">Can I phone a friend?<br>
+				<input type="radio" name="choice3" id='q3.4' value="d">I'm skipping this question.
+			</div>
+			<div class='quiz'>
+				<div class="q-num">Question 4</div>
+				<div class="q-title">What's your favorite movie?</div> 
+				<input type="radio" name="choice4" id='q4.1' value="a">Donnie Darko<br>
+				<input type="radio" name="choice4" id='q4.2' value="b">Inception<br>
+				<input type="radio" name="choice4" id='q4.3' value="c">The Avengers<br>
+				<input type="radio" name="choice4" id='q4.4' value="d">Anything with Adam Sandler.
+			</div>
+			<div class='quiz'>	
+				<div class="q-num">Question 5</div>
+				<div class="q-title">Approximately how much of your leisure time is spent doing physical activity?</div> 
+				<input type="radio" name="choice5" id='q5.1' value="a">80%<br>
+				<input type="radio" name="choice5" id='q5.2' value="b">50%<br>
+				<input type="radio" name="choice5" id='q5.3' value="c">30%<br>
+				<input type="radio" name="choice5" id='q5.4' value="d">10%
+			</div>
+			<div class='quiz'>
+				<div class="q-num">Question 6</div>
+				<div class="q-title">What would you do if someone ran by and snatched your purse/wallet?</div> 
+				<input type="radio" name="choice6" id='q6.1' value="a">Trip the bastard.<br>
+				<input type="radio" name="choice6" id='q6.2' value="b">Run after the stealer.<br>
+				<input type="radio" name="choice6" id='q6.3' value="c">Call 911<br>
+				<input type="radio" name="choice6" id='q6.4' value="d">'Eh. Wasn't that great of a wallet anyway.'
+			</div>
+			<div class='quiz'>
+				<div class="q-num">Question 7</div>
+				<div class="q-title">What is your favorite nightly activity?</div> 
+				<input type="radio" name="choice7" id='q7.1' value="a">Krav Maga.<br>
+				<input type="radio" name="choice7" id='q7.2' value="b">Taking the dog for a walk<br>
+				<input type="radio" name="choice7" id='q7.3' value="c">Watching TV<br>
+				<input type="radio" name="choice7" id='q7.4' value="d">Watching cat videos on YouTube
+			</div>
+			<div class='quiz'>
+				<div class="q-num">Question 8</div>
+				<div class="q-title">Which item is closest to you at your desk in your room?</div> 
+				<input type="radio" name="choice8" id='q8.1' value="a">Treadmill<br>
+				<input type="radio" name="choice8" id='q8.2' value="b">Stress ball<br>
+				<input type="radio" name="choice8" id='q8.3' value="c">Potato chips<br>
+				<input type="radio" name="choice8" id='q8.4' value="d">Everything is way too far away for my arm to reach.
+			</div>
+			<div class='quiz'>	
+				<div class="q-num">Question 9</div>
+				<div class="q-title">What's your favorite animal?</div> 
+				<input type="radio" name="choice9" id='q9.1' value="a">Freakin' tigers<br>
+				<input type="radio" name="choice9" id='q9.2' value="b">Hawks<br>
+				<input type="radio" name="choice9" id='q9.3' value="c">Turtles<br>
+				<input type="radio" name="choice9" id='q9.4' value="d">Sloths
+			</div>
+			<div class='quiz'>	
+				<div class="q-num">Question 10</div>
+				<div class="q-title">Why are we here?</div> 
+				<input type="radio" name="choice10" id='q10.1' value="a">To understand our world and help each other out at the same time<br>
+				<input type="radio" name="choice10" id='q10.2' value="b">To eat and mate.<br>
+				<input type="radio" name="choice10" id='q10.3' value="c">It's way too early in the morning for this type of question.<br>
+				<input type="radio" name="choice10" id='q10.4' value="d">It's way too late in the evening for this type of question.<br>
+			</div> 
+			<div id="button-wrapper"><input type="submit" value="Submit" id='button'></div>
+		</form> 
+		</div> 
+	</div>
+</body>
+</html>

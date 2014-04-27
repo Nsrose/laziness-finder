@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Laziness Finder</title>
+		<link rel="stylesheet" type="text/css" href="static/style.css">
+		<script src="static/jquery-1.9.1.js"></script>
+		<script src="static/script.js"></script>
+	</head>	
+	<body>
+		<div id="result-container">
+			<div id="result-center-content">	
+				<div id="title">Results</div>
+				<div id="subtitle">Based on your level of laziness, you should probably move to one of the following states immediately.</div>
+			</div>
+		</div>
+		
+
+		<div id='states'>
+		{% for state in states %}	
+			<div class='state'>
+				<div class='state_name'>{{state[1]}}</div>
+				<p>GDP Per Capita: ${{state[3]}}</p>
+				<p>Obesity Percentage: {{state[4]}}%</p>
+				<p>Education Ranking (out of 100): {{state[5]}}</p>
+			</div> 
+		{% endfor %}
+		</div>
+		<div id="button-wrapper"><input type="submit" action="/quiz" value="Try Again!" id='button'></div>
+	</body>		
+</html>
